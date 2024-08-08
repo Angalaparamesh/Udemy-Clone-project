@@ -12,6 +12,10 @@ body{
     justify-content:space-between;
     border-bottom:solid black 1px;
     align-items:center;
+    position:sticky;
+    top:0;
+    background-color: white;
+    z-index:1;
 }
 .navbar__s1__title{
     color:#A435F0;
@@ -24,11 +28,13 @@ body{
     display:flex;
     gap:10px;
     align-items:center;
+    
 }
 .navbar__s2 input{
     border:none;
     width:100%;
     font-size:16px;
+    background-color: transparent;
 }
 .navbar__s2 input:focus{
     outline:none;
@@ -37,6 +43,28 @@ body{
     display:flex;
     gap:10px;
     align-items:center;
+}
+
+/* My Learning Popup */
+.mylearning{
+    position:relative;
+    cursor: pointer;
+}
+.mylearning__popup{
+    position:absolute;
+    background-color: black;
+    border:1px solid white;
+    border-radius:10px;
+    width:100px;
+    top:150%;
+    padding:20px;
+    right:0;
+    display:none;
+}
+.mylearning:hover .mylearning__popup{
+    display:block;
+    color:white;
+
 }
 
 .categories{
@@ -50,10 +78,46 @@ body{
     color:white;
     padding:10px;
     border-radius:30px;
+    cursor:pointer;
+    border:1px solid #A435F0;
+}
+.categories p:hover{
+    transition:1s;
+    background-color:transparent;
+    color:black;
+    border:1px solid #A435F0;
 }
 
+.sale-img{
+    position:relative;
+}
 .sale-img img{
     width:100%;
+}
+.sale-image__offer{
+    background-color:burlywood;
+    color:black;
+    border:2px solid black;
+    width:35%;
+    padding:2%;
+    position:absolute;
+    top:10%;
+    left:10%;
+    animation-name: zoom;
+    animation-duration: 2s;
+    opacity:0;
+    animation-fill-mode: forwards;
+}
+
+@keyframes zoom {
+    0%{
+        transform:scale(0);
+        opacity:0;
+    }
+    100%{
+        transform:scale(1);
+        opacity:1;
+    }
 }
 
 .recommended{
